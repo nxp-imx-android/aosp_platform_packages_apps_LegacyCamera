@@ -28,15 +28,17 @@
                 <action android:name="android.intent.action.CAMERA_BUTTON"/>
             </intent-filter>
         </receiver>
-        <activity android:name="com.android.camera.Camera"
-                android:configChanges="orientation|screenSize|keyboardHidden"
-                android:clearTaskOnLaunch="true"
-                android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+	<activity android:name="com.android.camera.PermissionActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+	</activity>
+        <activity android:name="com.android.camera.Camera"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:clearTaskOnLaunch="true"
+                android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.media.action.IMAGE_CAPTURE" />
                 <category android:name="android.intent.category.DEFAULT" />
