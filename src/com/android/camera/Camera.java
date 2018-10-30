@@ -1987,14 +1987,9 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
         Size optimalSize = Util.getOptimalPreviewSize(this,
                 sizes, (double) size.width / size.height);
         Size original = mParameters.getPreviewSize();
-        if (!original.equals(optimalSize)) {
-            mParameters.setPreviewSize(optimalSize.width, optimalSize.height);
 
-            // Zoom related settings will be changed for different preview
-            // sizes, so set and read the parameters to get lastest values
-            mCameraDevice.setParameters(mParameters);
-            mParameters = mCameraDevice.getParameters();
-        }
+        //Preview size cannot be updated when preview is active, it's a restriction in camera service.
+
         Log.v(TAG, "Preview size is " + optimalSize.width + "x" + optimalSize.height);
 
         // Since change scene mode may change supported values,
