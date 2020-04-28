@@ -20,6 +20,10 @@ LOCAL_CFLAGS += \
         -Wno-unused-variable \
         -Wno-unused-function \
 
+# some warnings should be fixed
+LOCAL_CFLAGS += \
+        -Wno-error=sometimes-uninitialized \
+
 LOCAL_CPPFLAGS := -std=gnu++98
 
 LOCAL_SRC_FILES := \

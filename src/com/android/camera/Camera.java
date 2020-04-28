@@ -1583,8 +1583,6 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
         }
         // Dismiss open menu if exists.
         PopupManager.getInstance(this).notifyShowPopup(null);
-
-        if (mCameraSound == null) mCameraSound = new MediaActionSound();
     }
 
     @Override
@@ -1593,10 +1591,7 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
         stopPreview();
         // Close the camera now because other activities may need to use it.
         closeCamera();
-        if (mCameraSound != null) {
-            mCameraSound.release();
-            mCameraSound = null;
-        }
+        if (mCameraSound != null) mCameraSound.release();
         resetScreenOn();
 
         // Clear UI.
