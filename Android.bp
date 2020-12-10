@@ -9,8 +9,6 @@ android_app {
 
     jni_libs: ["libjni_legacymosaic"],
 
-    optional_uses_libs: ["com.google.android.media.effects"],
-
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
